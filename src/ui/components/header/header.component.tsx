@@ -1,8 +1,17 @@
-import { Header } from 'antd/lib/layout/layout'
 import React from 'react'
+import { Header, Search, Typography } from './header.styles'
 
-const HeaderComponent: React.FC = () => {
-    return <Header>test</Header>
+interface HeaderComponentProps {
+    onSearch: (value: string) => void
+}
+
+const HeaderComponent: React.FC<HeaderComponentProps> = ({ onSearch }) => {
+    return (
+        <Header>
+            <Typography>Github User Search</Typography>
+            <Search placeholder="User name" allowClear onSearch={onSearch} />
+        </Header>
+    )
 }
 
 export default HeaderComponent

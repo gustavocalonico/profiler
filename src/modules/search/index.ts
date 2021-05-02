@@ -1,1 +1,1 @@
-export { default as SearchComponent } from './search.component'
+export { default as SearchComponent } from './search.module'
