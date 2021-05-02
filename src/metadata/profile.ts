@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-interface IProfile {
+export interface IProfile {
     avatar_url: string
     events_url: string
     followers_url: string
