@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import { HeaderComponent } from '../../ui/components'
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { SearchPage } from './pages'
 
 const SearchComponent: React.FC = () => {
-    const [search, setSearch] = useState<string>()
-
     return (
-        <>
-            <HeaderComponent onSearch={(e: string) => setSearch(e)} />
-            <div /* component with search parameters */>test</div>
-        </>
+        <Switch>
+            <Route exact path="/" component={SearchPage} />
+        </Switch>
     )
 }
 
