@@ -1,1 +1,1 @@
-export { default as searchProfile } from './searchProfile/searchProfile.hook'
+export * from './searchProfiles/searchProfiles.hooks'
