@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { HeaderComponent } from '../../../../ui/components'
-import SearchResults from '../../components/search-results'
-import { useSearchProfile } from '../../hooks'
+import { HeaderComponent } from '../../ui/components'
+import SearchResults from './components/search-results'
+import { useSearchProfile } from './search.hooks'
 import { Content, CustomSpin } from './search.styles'
 
 const SearchPage: React.FC = () => {

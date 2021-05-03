@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { SearchPage } from './pages'
+import SearchPage from './search.page'
 
 const SearchComponent: React.FC = () => {
     return (

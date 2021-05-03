@@ -1,8 +1,8 @@
 import { useQuery } from 'react-query'
-import { IProfileSearchUI } from '../../../../metadata/profile'
-import { GET_SEARCH_USERS } from '../../../../metadata/queries'
-import { errorNotification } from '../../../../utils/notification'
-import { searchProfiles } from '../../services'
+import { IProfileSearchUI } from '../../metadata/profile'
+import { GET_SEARCH_USERS } from '../../metadata/queries'
+import { errorNotification } from '../../utils/notification'
+import { searchProfiles } from './search.services'
 
 interface ISearchProfileReturn {
     isLoading: boolean

@@ -1,5 +1,5 @@
-import { githubApi } from '../../../api'
-import { IProfileSearch } from '../../../metadata/profile'
+import { githubApi } from '../../api'
+import { IProfileSearch } from '../../metadata/profile'
 
 export async function searchProfiles(
     searchValue?: string | null,
