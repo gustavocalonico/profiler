@@ -1,7 +1,7 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter } from 'react-router-dom'
-import { SearchModule } from './modules'
+import { ProfileModule, SearchModule } from './modules'
 
 const queryClient = new QueryClient()
 
@@ -10,6 +10,7 @@ const App: React.FC = () => {
         <BrowserRouter>
             <QueryClientProvider client={queryClient}>
                 <SearchModule />
+                <ProfileModule />
             </QueryClientProvider>
         </BrowserRouter>
     )
