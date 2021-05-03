@@ -7,6 +7,7 @@ const { Search: AntSearch } = Input
 export const Header = styled(AntHeader)`
     display: flex;
     width: 100%;
+    height: 8vh;
     justify-content: space-between;
 `
 

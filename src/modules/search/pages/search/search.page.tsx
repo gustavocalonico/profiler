@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
-import { Layout } from 'antd'
 import { HeaderComponent } from '../../../../ui/components'
-
-const { Content } = Layout
+import SearchResults from '../../components/search-results'
+import { useSearchProfile } from '../../hooks'
+import { Content, CustomSpin } from './search.styles'
 
 const SearchPage: React.FC = () => {
-    const [search, setSearch] = useState<string>('')
+    const [searchValue, setSearch] = useState<string>('')
+    const { isLoading, profiles } = useSearchProfile(searchValue)
 
     return (
         <>
             <HeaderComponent onSearch={(e: string) => setSearch(e)} />
-            <Content>test</Content>
+            <Content>
+                {isLoading ? (
+                    <CustomSpin size="large" />
+                ) : (
+                    <SearchResults profiles={profiles} />
+                )}
+            </Content>
         </>
     )
 }

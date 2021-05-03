@@ -1,5 +1,5 @@
-import { useMemo } from 'react'
-import { useQuery } from 'react-query'
+import { useMemo, useState } from 'react'
+import { useQuery, useQueryClient } from 'react-query'
 import { IProfileUI } from '../../../../metadata/profile'
 import { GET_SEARCH_USERS } from '../../../../metadata/queries'
 import { errorNotification } from '../../../../utils/notification'
@@ -14,7 +14,7 @@ export const useSearchProfile = (
     searchString?: string
 ): ISearchProfileReturn => {
     const { isLoading, data } = useQuery<IProfileUI[]>(
-        GET_SEARCH_USERS,
+        [GET_SEARCH_USERS, searchString],
         () => (searchString ? searchProfiles(searchString) : []),
         {
             onError: (err: any) => {
@@ -23,15 +23,8 @@ export const useSearchProfile = (
         }
     )
 
-    const formattedProfiles = useMemo(() => {
-        if (data) {
-            return [] as IProfileUI[]
-        }
-        return undefined
-    }, [data])
-
     return {
         isLoading,
-        profiles: formattedProfiles || [],
+        profiles: (data as IProfileUI[]) || [],
     }
 }
