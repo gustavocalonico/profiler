@@ -1,7 +1,24 @@
+import { Avatar, Typography } from 'antd'
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { IProfileUI } from '../../../metadata/profile'
+import { Card } from './profile-thumb.styles'
 
-const ProfileComponent: React.FC = () => {
-    return <div />
+interface IProfileThumbComponentProps {
+    profile: IProfileUI
 }
 
-export default ProfileComponent
+const ProfileThumbComponent: React.FC<IProfileThumbComponentProps> = ({
+    profile,
+}) => {
+    return (
+        <Link to={profile.login}>
+            <Card title={profile.login}>
+                <Avatar src={profile.avatar_url} size="large" />
+                <Typography>{profile.login}</Typography>
+            </Card>
+        </Link>
+    )
+}
+
+export default ProfileThumbComponent
