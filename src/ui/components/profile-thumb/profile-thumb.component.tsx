@@ -1,11 +1,11 @@
 import { Avatar, Typography } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { IProfileUI } from '../../../metadata/profile'
+import { IProfileSearchUI } from '../../../metadata/profile'
 import { Card } from './profile-thumb.styles'
 
 interface IProfileThumbComponentProps {
-    profile: IProfileUI
+    profile: IProfileSearchUI
 }
 
 const ProfileThumbComponent: React.FC<IProfileThumbComponentProps> = ({

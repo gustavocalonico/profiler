@@ -1,11 +1,11 @@
 import { List } from 'antd'
 import React from 'react'
-import { IProfileUI } from '../../../../metadata/profile'
+import { IProfileSearchUI } from '../../../../metadata/profile'
 import ProfileThumbComponent from '../../../../ui/components/profile-thumb'
 import { Container, Empty } from './search-results.styles'
 
 interface ISearchResultsProps {
-    profiles: IProfileUI[]
+    profiles: IProfileSearchUI[]
 }
 
 const SearchResults: React.FC<ISearchResultsProps> = ({ profiles }) => {

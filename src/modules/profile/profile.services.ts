@@ -1,9 +1,9 @@
 import { githubApi } from '../../api'
-import { IProfile } from '../../metadata/profile'
+import { IProfileSearch } from '../../metadata/profile'
 
 export async function getUserProfile(
     userName?: string | null
-): Promise<IProfile> {
+): Promise<IProfileSearch> {
     const url = '/users'
     const searchUrl = userName ? `/${userName}` : ''
     const response = await githubApi.get(url + searchUrl, {})
