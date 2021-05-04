@@ -4,6 +4,8 @@ import {
     TeamOutlined,
     EnvironmentOutlined,
     LinkOutlined,
+    CodeOutlined,
+    GithubOutlined,
 } from '@ant-design/icons'
 import { HeaderComponent } from '../../ui/components'
 import { useGetProfile } from './profile.hooks'
@@ -35,7 +37,7 @@ const ProfileComponent: React.FC = () => {
 
     return (
         <>
-            <HeaderComponent profile={profile} />
+            <HeaderComponent />
             {!profile ? (
                 <Content>
                     <Empty description={<span>User not found!</span>} />
@@ -48,23 +50,45 @@ const ProfileComponent: React.FC = () => {
                             <Title>{profile.name}</Title>
                             <Text>{profile.bio}</Text>
                             <div>
+                                <GithubOutlined />
+                                <a
+                                    href={profile ? profile?.blog : ''}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <MiniText>{`@${profile.login}`}</MiniText>
+                                </a>
+                            </div>
+                            <div>
                                 <TeamOutlined />
-                                <MiniText>{profile.followers}</MiniText>
+                                <MiniText>
+                                    {`${profile.followers} followers`}
+                                </MiniText>
                             </div>
                             <div>
                                 <EnvironmentOutlined />
                                 <MiniText>{profile.location}</MiniText>
                             </div>
                             <div>
-                                <LinkOutlined />
-                                <a
-                                    href={profile ? profile?.blog : ''}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <MiniText>{profile.blog}</MiniText>
-                                </a>
+                                <CodeOutlined />
+                                <MiniText>
+                                    {`${profile.public_repos} repositories`}
+                                </MiniText>
                             </div>
+                            {profile?.blog ? (
+                                <div>
+                                    <LinkOutlined />
+                                    <a
+                                        href={profile ? profile?.blog : ''}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        <MiniText>{profile.blog}</MiniText>
+                                    </a>
+                                </div>
+                            ) : (
+                                <></>
+                            )}
                         </HeaderSection>
                     </Header>
                 </Content>
