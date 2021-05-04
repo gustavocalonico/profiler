@@ -5,7 +5,11 @@ import ProfileComponent from './profile.component'
 const ProfileModule: React.FC = () => {
     return (
         <Switch>
-            <Route exact path="/:userLogin" component={ProfileComponent} />
+            <Route
+                exact
+                path="/profile/:userLogin"
+                component={ProfileComponent}
+            />
         </Switch>
     )
 }

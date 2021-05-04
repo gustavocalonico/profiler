@@ -12,10 +12,10 @@ export async function getUserProfile(
     return response.data
 }
 
-export async function getUserRepos(profile?: IProfileUI): Promise<IRepoUI> {
-    const url = profile ? `${profile.repos_url}` : ''
-    const response = await rawApi.get(url, {})
-
-    console.log(response)
-    return response.data
+export async function getUserRepos(url?: string): Promise<IRepoUI[]> {
+    if (url) {
+        const response = await rawApi.get(url, {})
+        return response.data
+    }
+    return []
 }

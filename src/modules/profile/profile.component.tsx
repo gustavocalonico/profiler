@@ -8,7 +8,7 @@ import {
     GithubOutlined,
 } from '@ant-design/icons'
 import { HeaderComponent } from '../../ui/components'
-import { useGetProfile } from './profile.hooks'
+import { useGetLangs, useGetProfile } from './profile.hooks'
 import {
     Content,
     Header,
@@ -23,11 +23,10 @@ import {
 
 const ProfileComponent: React.FC = () => {
     const { userLogin } = useParams() as { userLogin: string }
-    const { isLoading, profile } = useGetProfile(userLogin)
+    const { isLoading: isLoadingProfile, profile } = useGetProfile(userLogin)
+    const { isLoading: isLoadingLangs, langs } = useGetLangs(profile?.repos_url)
 
-    console.log(profile)
-
-    if (isLoading) {
+    if (isLoadingProfile || isLoadingLangs) {
         return (
             <Content>
                 <CustomSpin size="large" />
