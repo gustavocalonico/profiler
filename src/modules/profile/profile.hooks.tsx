@@ -6,7 +6,7 @@ import { getUserProfile } from './profile.services'
 
 interface IGetProfileReturn {
     isLoading: boolean
-    profile: IProfileUI
+    profile?: IProfileUI
 }
 
 export const useGetProfile = (userName?: string): IGetProfileReturn => {
@@ -22,6 +22,6 @@ export const useGetProfile = (userName?: string): IGetProfileReturn => {
 
     return {
         isLoading,
-        profile: (data as IProfileUI) || [],
+        profile: (data as IProfileUI) || undefined,
     }
 }

@@ -10,4 +10,5 @@ export const Container = styled.div`
     margin-left: 10vw;
     margin-top: 6vh;
     margin-bottom: 2vh;
+    width: 100%;
 `
