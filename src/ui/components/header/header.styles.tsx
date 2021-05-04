@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { Layout, Input, Typography as AntdTypography } from 'antd'
+import {
+    Layout,
+    Input,
+    Typography as AntdTypography,
+    Button as AntdButton,
+} from 'antd'
 
 const { Header: AntHeader } = Layout
 const { Search: AntSearch } = Input
@@ -17,3 +22,8 @@ export const Search = styled(AntSearch)`
     width: 250px;
 `
 export const Typography = styled(AntdTypography)``
+
+export const Button = styled(AntdButton)`
+    margin-top: auto;
+    margin-bottom: auto;
+`

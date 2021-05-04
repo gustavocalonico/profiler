@@ -1,14 +1,20 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetProfile } from './profiles.hooks'
+import { HeaderComponent } from '../../ui/components'
+import { useGetProfile } from './profile.hooks'
+import { Content } from './profile.styles'
 
 const ProfileComponent: React.FC = () => {
     const { userLogin } = useParams() as { userLogin: string }
     const { isLoading, profile } = useGetProfile(userLogin)
 
-    console.log(profile)
-
-    return <div>{userLogin}</div>
+    return (
+        <>
+            <HeaderComponent profile={profile} />
+            <Content />
+            <div>{profile.login}</div>
+        </>
+    )
 }
 
 export default ProfileComponent
