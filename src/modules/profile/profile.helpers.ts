@@ -14,7 +14,7 @@ export const measureLanguages = (repos: IRepoUI[]): IStatusUI => {
     })
 
     // Make an array with same lenght of unique langs
-    const repoCount: number[] = uniqueLangs.map((uniLang) => 0)
+    const repoCount: number[] = uniqueLangs.map(() => 0)
 
     // Count which langs matches the unique
     uniqueLangs.forEach((uniLang, index) => {
@@ -24,7 +24,7 @@ export const measureLanguages = (repos: IRepoUI[]): IStatusUI => {
     })
 
     // Calcualte percentages of langs and repositories
-    const percentages: number[] = repoCount.map((uniLang) => 0)
+    const percentages: number[] = repoCount.map(() => 0)
     const totalRepos = repoCount.reduce((prev, current) => prev + current, 0)
     repoCount.forEach((item, index) => {
         percentages[index] = item / totalRepos

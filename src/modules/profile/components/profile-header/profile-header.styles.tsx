@@ -1,15 +1,22 @@
 import styled from 'styled-components'
-import { Layout, Spin, Typography, Empty as AntdEmpty } from 'antd'
+import {
+    Spin,
+    Avatar as AntdAvatar,
+    Typography,
+    Empty as AntdEmpty,
+} from 'antd'
 
-const { Content: AntContent } = Layout
-
-export const Content = styled(AntContent)`
+export const Header = styled.div`
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 92vh;
-    margin-left: 25vw;
-    margin-right: 25vw;
+    margin-bottom: 5vh;
+`
+export const HeaderSection = styled.div`
+    padding: 20px;
+`
+
+export const Avatar = styled(AntdAvatar)`
+    height: 25vh;
+    width: 25vh;
 `
 
 export const Title = styled(Typography.Title)``
