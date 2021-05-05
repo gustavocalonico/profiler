@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons'
 import React from 'react'
 import { IProfileUI } from '../../../../metadata/profile'
+import Notes from '../notes'
 import {
     Avatar,
     Header,
@@ -30,44 +31,50 @@ const ProfileHeader: React.FC<IProfileHeaderProps> = ({ profile }) => {
             <HeaderSection>
                 <Title>{profile.name}</Title>
                 <Text>{profile.bio}</Text>
-                <div>
-                    <GithubOutlined />
-                    <a
-                        href={profile ? profile?.blog : ''}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <MiniText>{`@${profile.login}`}</MiniText>
-                    </a>
-                </div>
-                <div>
-                    <TeamOutlined />
-                    <MiniText>{`${profile.followers} followers`}</MiniText>
-                </div>
-                <div>
-                    <EnvironmentOutlined />
-                    <MiniText>{profile.location}</MiniText>
-                </div>
-                <div>
-                    <CodeOutlined />
-                    <MiniText>
-                        {`${profile.public_repos} repositories`}
-                    </MiniText>
-                </div>
-                {profile?.blog ? (
+                <HeaderSection>
                     <div>
-                        <LinkOutlined />
+                        <GithubOutlined />
                         <a
                             href={profile ? profile?.blog : ''}
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <MiniText>{profile.blog}</MiniText>
+                            <MiniText>{`@${profile.login}`}</MiniText>
                         </a>
                     </div>
-                ) : (
-                    <></>
-                )}
+                    <div>
+                        <TeamOutlined />
+                        <MiniText>{`${profile.followers} followers`}</MiniText>
+                    </div>
+                    <div>
+                        <EnvironmentOutlined />
+                        <MiniText>{profile.location}</MiniText>
+                    </div>
+                    <div>
+                        <CodeOutlined />
+                        <MiniText>
+                            {`${profile.public_repos} repositories`}
+                        </MiniText>
+                    </div>
+                    {profile?.blog ? (
+                        <div>
+                            <LinkOutlined />
+                            <a
+                                href={profile ? profile?.blog : ''}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <MiniText>{profile.blog}</MiniText>
+                            </a>
+                        </div>
+                    ) : (
+                        <></>
+                    )}
+                </HeaderSection>
+
+                <div>
+                    <Notes profileName={profile.login} />
+                </div>
             </HeaderSection>
         </Header>
     )

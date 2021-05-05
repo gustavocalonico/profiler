@@ -8,7 +8,7 @@ import {
 
 export const Header = styled.div`
     display: flex;
-    margin-bottom: 5vh;
+    margin-bottom: 1vh;
 
     @media only screen and (max-width: 600px) {
         display: block;
@@ -16,6 +16,7 @@ export const Header = styled.div`
 `
 export const HeaderSection = styled.div`
     padding: 20px;
+    padding-left: 0;
 `
 
 export const Avatar = styled(AntdAvatar)`
