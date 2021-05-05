@@ -18,7 +18,15 @@ const SearchResults: React.FC<ISearchResultsProps> = ({ profiles }) => {
             ) : (
                 <Container>
                     <List
-                        grid={{ gutter: 20, column: 3 }}
+                        grid={{
+                            gutter: 20,
+                            xs: 1,
+                            sm: 1,
+                            md: 3,
+                            lg: 3,
+                            xl: 3,
+                            xxl: 3,
+                        }}
                         dataSource={profiles}
                         renderItem={(item) => (
                             <List.Item>

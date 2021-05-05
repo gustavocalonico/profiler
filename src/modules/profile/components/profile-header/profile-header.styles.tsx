@@ -9,14 +9,17 @@ import {
 export const Header = styled.div`
     display: flex;
     margin-bottom: 5vh;
+
+    @media only screen and (max-width: 600px) {
+        display: block;
+    }
 `
 export const HeaderSection = styled.div`
     padding: 20px;
 `
 
 export const Avatar = styled(AntdAvatar)`
-    height: 25vh;
-    width: 25vh;
+    margin: 20px;
 `
 
 export const Title = styled(Typography.Title)``

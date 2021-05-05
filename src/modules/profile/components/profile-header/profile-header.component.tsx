@@ -23,7 +23,10 @@ interface IProfileHeaderProps {
 const ProfileHeader: React.FC<IProfileHeaderProps> = ({ profile }) => {
     return (
         <Header>
-            <Avatar src={profile.avatar_url} size="large" />
+            <Avatar
+                src={profile.avatar_url}
+                size={{ xs: 192, sm: 192, md: 192, lg: 192, xl: 240, xxl: 240 }}
+            />
             <HeaderSection>
                 <Title>{profile.name}</Title>
                 <Text>{profile.bio}</Text>

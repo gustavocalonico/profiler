@@ -32,7 +32,7 @@ export const useGetProfile = (userName?: string): IGetProfileReturn => {
 
 interface IGetLangsReturn {
     isLoading: boolean
-    langs?: IStatusUI
+    langs?: IStatusUI[]
 }
 
 export const useGetLangs = (url?: string): IGetLangsReturn => {

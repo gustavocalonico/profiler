@@ -1,7 +1,7 @@
 import { IRepoUI } from '../../metadata/repos'
 import { IStatusUI } from '../../metadata/status'
 
-export const measureLanguages = (repos: IRepoUI[]): IStatusUI => {
+export const measureLanguages = (repos: IRepoUI[]): IStatusUI[] => {
     // Get all repositories languages
     const langs: string[] = []
     repos.forEach((repo) => {
@@ -14,9 +14,8 @@ export const measureLanguages = (repos: IRepoUI[]): IStatusUI => {
     })
 
     // Make an array with same lenght of unique langs
-    const repoCount: number[] = uniqueLangs.map(() => 0)
-
     // Count which langs matches the unique
+    const repoCount: number[] = uniqueLangs.map(() => 0)
     uniqueLangs.forEach((uniLang, index) => {
         langs.forEach((lang) => {
             if (lang === uniLang) repoCount[index] += 1
@@ -30,9 +29,12 @@ export const measureLanguages = (repos: IRepoUI[]): IStatusUI => {
         percentages[index] = item / totalRepos
     })
 
-    return {
-        languages: uniqueLangs,
-        langRepoCount: repoCount,
-        percentage: percentages,
-    }
+    // Merge the arrays
+    const merged: IStatusUI[] = uniqueLangs.map((item, index) => ({
+        language: item,
+        langRepoCount: repoCount[index],
+        percentage: percentages[index],
+    }))
+
+    return merged
 }

@@ -12,9 +12,12 @@ const ProfileComponent: React.FC = () => {
 
     if (isLoadingProfile || isLoadingLangs) {
         return (
-            <Content>
-                <CustomSpin size="large" />
-            </Content>
+            <>
+                <HeaderComponent />
+                <Content>
+                    <CustomSpin size="large" />
+                </Content>
+            </>
         )
     }
 
