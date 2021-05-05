@@ -9,6 +9,7 @@ export const Content = styled(AntContent)`
     align-items: center;
     flex-direction: column;
     height: 100%;
+    min-height: 83vh;
     width: 100%;
     padding-right: 25vw;
     padding-left: 25vw;

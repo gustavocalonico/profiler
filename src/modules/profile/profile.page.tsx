@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { HeaderComponent } from '../../ui/components'
+import { Footer, HeaderComponent } from '../../ui/components'
 import { useGetLangs, useGetProfile } from './profile.hooks'
 import { Content, Empty, CustomSpin } from './profile.styles'
 import { ProfileHeader, Languages } from './components'
@@ -17,6 +17,7 @@ const ProfileComponent: React.FC = () => {
                 <Content>
                     <CustomSpin size="large" />
                 </Content>
+                <Footer />
             </>
         )
     }
@@ -34,6 +35,7 @@ const ProfileComponent: React.FC = () => {
                     <Languages status={langs} />
                 </Content>
             )}
+            <Footer />
         </>
     )
 }
