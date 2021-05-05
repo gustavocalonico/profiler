@@ -1,9 +1,7 @@
-import { RadarChartOutlined } from '@ant-design/icons'
-import { List, Statistic } from 'antd'
-import Item from 'antd/lib/list/Item'
+import { Statistic } from 'antd'
 import React from 'react'
 import { IStatusUI } from '../../../../metadata/status'
-import { Text, Card } from './languages.styles'
+import { Text, Card, List } from './languages.styles'
 
 interface ILanguagesProps {
     status: IStatusUI[]
@@ -16,13 +14,13 @@ const Languages: React.FC<ILanguagesProps> = ({ status }) => {
                 gutter: 20,
                 xs: 1,
                 sm: 1,
-                md: 3,
+                md: 2,
                 lg: 3,
                 xl: 3,
                 xxl: 3,
             }}
             dataSource={status}
-            renderItem={(item) => {
+            renderItem={(item: any) => {
                 const percentage = item.percentage ? item.percentage * 100 : '%'
                 const repoText: string =
                     item.langRepoCount && item.langRepoCount > 1
@@ -33,11 +31,7 @@ const Languages: React.FC<ILanguagesProps> = ({ status }) => {
                     <Card>
                         <List.Item>
                             <Statistic
-                                title={
-                                    item.language
-                                        ? item.language
-                                        : 'Undefined language'
-                                }
+                                title={item.language}
                                 value={percentage}
                                 precision={2}
                                 valueStyle={{ color: '#3f8600' }}

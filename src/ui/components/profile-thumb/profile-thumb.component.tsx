@@ -12,7 +12,7 @@ const ProfileThumbComponent: React.FC<IProfileThumbComponentProps> = ({
     profile,
 }) => {
     return (
-        <Link to={`/profile/${profile.login}`}>
+        <Link to={`/${profile.login}`}>
             <Card title={profile.login}>
                 <Avatar
                     src={profile.avatar_url}

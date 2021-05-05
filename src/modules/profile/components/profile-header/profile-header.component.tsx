@@ -64,7 +64,11 @@ const ProfileHeader: React.FC<IProfileHeaderProps> = ({ profile }) => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <MiniText>{profile.blog}</MiniText>
+                                <MiniText>
+                                    {profile.blog.length > 30
+                                        ? 'blog'
+                                        : profile.blog}
+                                </MiniText>
                             </a>
                         </div>
                     ) : (

@@ -10,7 +10,7 @@ export const Header = styled.div`
     display: flex;
     margin-bottom: 1vh;
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
         display: block;
     }
 `
@@ -21,6 +21,11 @@ export const HeaderSection = styled.div`
 
 export const Avatar = styled(AntdAvatar)`
     margin: 20px;
+    @media only screen and (max-width: 768px) {
+        margin: auto;
+        margin-right: 15vw;
+        margin-left: 15vw;
+    }
 `
 
 export const Title = styled(Typography.Title)``

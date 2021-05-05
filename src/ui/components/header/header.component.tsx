@@ -1,5 +1,11 @@
 import React from 'react'
-import { Header, Search, Typography } from './header.styles'
+import {
+    Container,
+    GithubOutlined,
+    Header,
+    Search,
+    Title,
+} from './header.styles'
 
 interface HeaderComponentProps {
     onSearch?: (value: string) => void
@@ -8,7 +14,12 @@ interface HeaderComponentProps {
 const HeaderComponent: React.FC<HeaderComponentProps> = ({ onSearch }) => {
     return (
         <Header>
-            <Typography>Github User Search</Typography>
+            <Container href="/" rel="noreferrer">
+                <GithubOutlined style={{ fontSize: 24 }} />
+                <Title level={5} style={{ color: '#ffff' }}>
+                    Github Profiler
+                </Title>
+            </Container>
             {onSearch ? (
                 <Search
                     placeholder="User name"

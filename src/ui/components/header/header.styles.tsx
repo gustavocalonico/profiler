@@ -5,6 +5,7 @@ import {
     Typography as AntdTypography,
     Button as AntdButton,
 } from 'antd'
+import { GithubOutlined as AntdGithubOutlined } from '@ant-design/icons'
 
 const { Header: AntHeader } = Layout
 const { Search: AntSearch } = Input
@@ -21,9 +22,22 @@ export const Search = styled(AntSearch)`
     margin-bottom: auto;
     width: 250px;
 `
-export const Typography = styled(AntdTypography)``
+export const Title = styled(AntdTypography.Title)`
+    margin-top: 6px;
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+`
 
-export const Button = styled(AntdButton)`
+export const Container = styled.a`
+    display: flex;
     margin-top: auto;
     margin-bottom: auto;
+`
+
+export const GithubOutlined = styled(AntdGithubOutlined)`
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 32;
+    color: #ffff;
 `
