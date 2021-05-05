@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Profiler
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a basic github profile explorer, made for study purposes.
 
 ## Available Scripts
 
