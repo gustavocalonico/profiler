@@ -1,3 +1,0 @@
-export const GET_SEARCH_USERS = 'GET_SEARCH_USERS'
-export const GET_USER_PROFILE = 'GET_USER_PROFILE'
-export const GET_USER_REPOS = 'GET_USER_REPOS'
