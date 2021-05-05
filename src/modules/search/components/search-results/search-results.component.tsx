@@ -30,9 +30,7 @@ const SearchResults: React.FC<ISearchResultsProps> = ({ profiles }) => {
                         dataSource={profiles}
                         renderItem={(item) => (
                             <List.Item>
-                                <ProfileThumbComponent profile={item}>
-                                    Card content
-                                </ProfileThumbComponent>
+                                <ProfileThumbComponent profile={item} />
                             </List.Item>
                         )}
                     />
