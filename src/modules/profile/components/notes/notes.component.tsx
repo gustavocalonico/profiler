@@ -15,6 +15,7 @@ const Notes: React.FC<INotesProps> = ({ profileName }) => {
 
     const notes = localStorage.getItem(profileName)
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleChange = (e: any): void => {
         const { value } = e.target
         setInputValue(value)

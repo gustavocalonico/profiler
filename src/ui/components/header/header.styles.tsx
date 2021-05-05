@@ -1,10 +1,5 @@
 import styled from 'styled-components'
-import {
-    Layout,
-    Input,
-    Typography as AntdTypography,
-    Button as AntdButton,
-} from 'antd'
+import { Layout, Input, Typography as AntdTypography } from 'antd'
 import { GithubOutlined as AntdGithubOutlined } from '@ant-design/icons'
 
 const { Header: AntHeader } = Layout

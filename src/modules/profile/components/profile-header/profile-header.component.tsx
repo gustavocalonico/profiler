@@ -35,11 +35,13 @@ const ProfileHeader: React.FC<IProfileHeaderProps> = ({ profile }) => {
                     <div>
                         <GithubOutlined />
                         <a
-                            href={profile ? profile?.blog : ''}
+                            href={profile ? profile?.html_url : ''}
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <MiniText>{`@${profile.login}`}</MiniText>
+                            <MiniText style={{ color: '#3f8600' }}>
+                                {`@${profile.login}`}
+                            </MiniText>
                         </a>
                     </div>
                     <div>
@@ -64,7 +66,7 @@ const ProfileHeader: React.FC<IProfileHeaderProps> = ({ profile }) => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <MiniText>
+                                <MiniText style={{ color: '#3f8600' }}>
                                     {profile.blog.length > 30
                                         ? 'blog'
                                         : profile.blog}

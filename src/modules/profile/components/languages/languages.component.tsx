@@ -1,5 +1,5 @@
 import { Statistic } from 'antd'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { IStatusUI } from '../../../../metadata/status'
 import { Text, Card, List } from './languages.styles'
 
@@ -20,6 +20,7 @@ const Languages: React.FC<ILanguagesProps> = ({ status }) => {
                 xxl: 3,
             }}
             dataSource={status}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             renderItem={(item: any) => {
                 const percentage = item.percentage ? item.percentage * 100 : '%'
                 const repoText: string =
@@ -42,7 +43,7 @@ const Languages: React.FC<ILanguagesProps> = ({ status }) => {
                             </Text>
                         </List.Item>
                     </Card>
-                )
+                ) as ReactNode
             }}
         />
     )

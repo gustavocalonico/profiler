@@ -1,8 +1,8 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { useQuery } from 'react-query'
 import { IProfileUI } from '../../metadata/profile'
 import { GET_USER_PROFILE, GET_USER_REPOS } from '../../metadata/queries'
-import { IRepo, IRepoUI } from '../../metadata/repos'
+import { IRepoUI } from '../../metadata/repos'
 import { IStatusUI } from '../../metadata/status'
 import { errorNotification } from '../../utils/notification'
 import { measureLanguages } from './profile.helpers'
@@ -18,6 +18,7 @@ export const useGetProfile = (userName?: string): IGetProfileReturn => {
         [GET_USER_PROFILE, userName],
         () => getUserProfile(userName),
         {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onError: (err: any) => {
                 errorNotification(err)
             },
@@ -40,6 +41,7 @@ export const useGetLangs = (url?: string): IGetLangsReturn => {
         [GET_USER_REPOS, url],
         () => getUserRepos(url),
         {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onError: (err: any) => {
                 errorNotification(err)
             },

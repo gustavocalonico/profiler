@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notification } from 'antd'
 
 export const errorNotification = (
@@ -24,6 +26,8 @@ export const errorNotification = (
 
     if (typeof errorObject === 'string') {
         errorMessage = errorObject
+    } else {
+        errorMessage = errorObject.message
     }
 
     notification.error({

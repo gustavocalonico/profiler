@@ -16,6 +16,7 @@ export const useSearchProfile = (
         [GET_SEARCH_USERS, searchString],
         () => (searchString ? searchProfiles(searchString) : []),
         {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onError: (err: any) => {
                 errorNotification(err)
             },

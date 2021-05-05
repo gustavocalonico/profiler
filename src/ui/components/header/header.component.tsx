@@ -14,7 +14,7 @@ interface HeaderComponentProps {
 const HeaderComponent: React.FC<HeaderComponentProps> = ({ onSearch }) => {
     return (
         <Header>
-            <Container href="/" rel="noreferrer">
+            <Container href={process.env.PUBLIC_URL} rel="noreferrer">
                 <GithubOutlined style={{ fontSize: 24 }} />
                 <Title level={5} style={{ color: '#ffff' }}>
                     Github Profiler
