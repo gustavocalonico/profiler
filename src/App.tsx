@@ -7,7 +7,7 @@ const queryClient = new QueryClient()
 
 const App: React.FC = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <QueryClientProvider client={queryClient}>
                 <SearchModule />
                 <ProfileModule />
